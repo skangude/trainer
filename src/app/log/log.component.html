@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    LOG: {{type}}
+  </div>
+  <div class="panel-body">
+    <div *ngFor="let logInfo of logConstants;let i=index;">
+      <h4>{{i+1}}. {{logInfo.heading}}: {{logInfo.fulltext}}</h4>
+      <br>
+      <div class="row" style="border-bottom:1px dotted #ccc; padding-bottom:30px;margin:0px 20px 30px">
+        <div class="col-xs-10 col-xs-offset-1">
+          <div class='btn-group btn-group-justified'>
+            <div class='btn-group'>
+              <button 
+                class='btn {{ logInfo.logString=="notLogged" || logInfo.logString=="action"  ? "btn-default" : "btn-success"}} ' 
+                (click)='updateLog("inaction",logInfo)'>
+                  {{logInfo.inaction}}
+              </button>
+            </div>
+            <div class='btn-group'>
+              <button 
+                class='btn {{ logInfo.logString=="notLogged" || logInfo.logString=="inaction"  ? "btn-default" : "btn-danger"}}' 
+                (click)='updateLog("action",logInfo)'>
+                  {{logInfo.action}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+          <button 
+            class='btn btn-info' 
+            style="width:100%;margin:40px 0px;padding:20px 0px" 
+            click='submitLog()'>SUBMIT</button>
+      </div>
+    </div>
+
+  </div>
+</div>
