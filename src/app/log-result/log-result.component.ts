@@ -16,8 +16,9 @@ export class LogResultComponent implements OnInit {
       logs=>{
         let loggings = logs.filter(el=>el.type);
         let datedLogs=loggings.map(el=>{return {type:el.type, time:new Date(parseInt(el._id.substr(0,8),16)*1000)}});
-        this.todaysLogs= datedLogs.filter(el=>new Date(el.time.getTime()).setHours(0,0,0,0) ==new Date().setHours(0,0,0,0))
-        this.earlierLogs = datedLogs.filter(el=>el.time.setHours(0,0,0,0)!=new Date().setHours(0,0,0,0))
+        console.log(datedLogs);
+        this.todaysLogs= datedLogs.filter(el=>new Date(el.time.valueOf()).setHours(0,0,0,0) ==new Date().setHours(0,0,0,0));
+        this.earlierLogs = datedLogs.filter(el=>new Date(el.time.valueOf()).setHours(0,0,0,0) !=new Date().setHours(0,0,0,0));
       },
       err=>console.log(err)
     )
