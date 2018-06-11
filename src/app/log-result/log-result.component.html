@@ -1,0 +1,40 @@
+<h2>Recent Successful Logs</h2>
+
+<h3>Today's Logs <span *ngIf="todaysLogs" style="color:red">{{todaysLogs.length}}</span></h3>
+<table class="table table-responsive table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>S. No.</th>
+      <th>Log Type</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let log of todaysLogs;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{log.type}}</td>
+      <td>{{log.time}}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+<h3>Earlier Logs</h3>
+
+<table class="table table-responsive table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>S. No.</th>
+        <th>Log Type</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of earlierLogs;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{log.type}}</td>
+        <td>{{log.time}}</td>
+      </tr>
+    </tbody>
+  
+  </table>

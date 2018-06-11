@@ -8,14 +8,16 @@ import { LogOptionsComponent } from './log-options/log-options.component';
 import { TenColmBtnComponent } from './log-options/ten-colm-btn/ten-colm-btn.component';
 import { LogService } from './log.service';
 
-import {HttpClientModule} from  '@angular/common/http'
+import {HttpClientModule} from  '@angular/common/http';
+import { LogResultComponent } from './log-result/log-result.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LogComponent,
     LogOptionsComponent,
-    TenColmBtnComponent
+    TenColmBtnComponent,
+    LogResultComponent
   ],
   imports: [
     BrowserModule,AppRoutingModule, HttpClientModule

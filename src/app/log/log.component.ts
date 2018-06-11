@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LogService } from '../log.service';
 
 @Component({
   selector: 'app-log',
@@ -7,10 +8,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./log.component.css']
 })
 export class LogComponent implements OnInit {
-  type:string = '30min';
+  type:string;
   logConstants:Array<any>;
   
-  constructor(private route:ActivatedRoute  ) {
+  constructor(private route:ActivatedRoute, 
+              private router: Router,
+              private logService:LogService  ) {
     this.type = this.route.snapshot.data.type;
     this.logConstants = this.route.snapshot.data.logConstants;
   }
@@ -31,7 +34,18 @@ export class LogComponent implements OnInit {
   }
 
   submitLog(){
-    
+    let logsSubmitted = [];
+    this.logToSubmit.forEach(log=>{
+      log.heading = undefined;
+      log.fulltext = undefined;
+      log.action = undefined
+      log.inaction = undefined;
+      logsSubmitted.push(JSON.parse(JSON.stringify(log)));
+    });
+    this.logService.postLog({type: this.type, logs:logsSubmitted}).subscribe(
+      logging => {console.log(logging);this.router.navigate(['/logResult'])},
+      error => console.log(error)
+    )
   }
 
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LogService {
-  url:''
+  private url='http://localhost:3000/logs/loggings'
   constructor(private http: HttpClient) { }
 
   postLog(logs):Observable<any>{
@@ -18,8 +18,8 @@ export class LogService {
     return this.http.post(this.url,logs,httpOptions);
   }
 
-  getLogs(){
-    
+  getLogs():Observable<Array<any>>{
+    return this.http.get<Array<any>>(this.url);
   }
 
 }
