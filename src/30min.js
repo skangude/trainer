@@ -145,6 +145,20 @@ export const thirtyMinLogConstants = [
 		"fulltext": "You ALWAYS had your joints and body EXPANDING, not constricting?",
 		"action": "No",
 		"inaction": "Yes"
+	},
+	{
+		"heading": "fitness",
+		"sname": "up_n_move_every_half_hr",
+		"fulltext": "Did you get up and move for 1 minute minimum every half hour?",
+		"action": "No",
+		"inaction": "Yes"
+	},
+	{
+		"heading": "fitness",
+		"sname": "keeping_hydrated",
+		"fulltext": "Are you having enough fluids? Err on having extra!!",
+		"action": "No",
+		"inaction": "Yes"
 	}
 
 ]	
