@@ -103,7 +103,50 @@ export const thirtyMinLogConstants = [
 		"fulltext": "Have you scratched your face or body in the last half hour?",
 		"action": "Yes",
 		"inaction": "No"
+	},
+	{
+		"heading": "Posture",
+		"sname": "one_long_straight_spine",
+		"fulltext": "Was your spine from head crown to tailbone - straight?",
+		"action": "No",
+		"inaction": "Yes"
+	},
+	{
+		"heading": "Posture",
+		"sname": "no_text_neck",
+		"fulltext": "You did not have TEXT-NECK (neck forward), right?",
+		"action": "No",
+		"inaction": "Yes"
+	},
+	{
+		"heading": "Posture",
+		"sname": "only_waist_bend_forward_while_sitting",
+		"fulltext": "You ALWAYS bent from the waist to lean or reach forward while sitting?",
+		"action": "No",
+		"inaction": "Yes"
+	},
+	{
+		"heading": "Posture",
+		"sname": "lats_engaged_shoulders_pulling_down",
+		"fulltext": "You ALWAYS had lats engaged while sitting/standing/walking? Lats pulled the shoulders down behind your chest?",
+		"action": "No",
+		"inaction": "Yes"
+	},
+	{
+		"heading": "Posture",
+		"sname": "lats_engaged_long_spine_while_transitioning",
+		"fulltext": "You ALWAYS had LATS-ENGAGED and ELONGATED_SPINE while transitioning from sitting to standing, stair climbing, and vice versa etc? ",
+		"action": "No",
+		"inaction": "Yes"
+	},
+	{
+		"heading": "Posture",
+		"sname": "expansive_joints_not_constricted",
+		"fulltext": "You ALWAYS had your joints and body EXPANDING, not constricting?",
+		"action": "No",
+		"inaction": "Yes"
 	}
+
 ]	
 
 				
