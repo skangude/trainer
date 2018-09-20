@@ -9,9 +9,11 @@ import { LogOptionsComponent } from '../log-options/log-options.component';
 import { LogResultComponent } from '../log-result/log-result.component';
 import {tenMinLogConstants} from '../../10min';
 import {final30MinLogConstants} from '../../final30min';
+import {weeklyLogConstants} from '../../weekly';
 
 
 const appRoutes:Routes = [
+  {path:'weekly',component:LogComponent,data:{type:'weekly',logConstants: weeklyLogConstants  }},
   {path:'final30min',component:LogComponent,data:{type:'final30min',logConstants: final30MinLogConstants  }},
   {path:'10min',component:LogComponent,data:{type:'10min',logConstants: tenMinLogConstants  }},
   {path:'30min',component:LogComponent,data:{type:'30min',logConstants: thirtyMinLogConstants }},
