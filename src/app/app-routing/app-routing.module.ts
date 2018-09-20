@@ -7,8 +7,10 @@ import {nightlyLogConstants} from '../../nightly';
 import {locationChangeLogConstants} from '../../locationChange';
 import { LogOptionsComponent } from '../log-options/log-options.component';
 import { LogResultComponent } from '../log-result/log-result.component';
+import {tenMinLogConstants} from '../../10min';
 
 const appRoutes:Routes = [
+  {path:'10min',component:LogComponent,data:{type:'10min',logConstants: tenMinLogConstants  }},
   {path:'30min',component:LogComponent,data:{type:'30min',logConstants: thirtyMinLogConstants }},
   {path:'locationChange',component:LogComponent,data:{type:'locationChange',logConstants: locationChangeLogConstants }},
   {path:'nightly',component:LogComponent,data:{type:'nightly',logConstants: nightlyLogConstants }},
